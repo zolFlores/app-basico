@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 my-3">
+            <app-form-new-item [label]="'Ciudad'" [className]="' btn-primary'" (newItemEvent)="addCiudad($event)"></app-form-new-item>
+         </div>
+         <hr>
+         <div class="col-md 8">
+            <ul>
+            <app-cities *ngFor="let city of cities" 
+            (cityClickedEvent)="Onclicked($event)" [city]="city" [selection]="ciudad"></app-cities>
+           </ul>
+            
+           
+        </div>
+        <div class="col-md-4">
+            <div *ngIf="ciudad">
+                <p> La ciudad elegida es : {{ciudad}}</p>
+                <app-boton (click)="Unclick()" [color]="'red'" [labell]="'Limpiar' "></app-boton>
+            </div>
+
+            <hr>
+            <p>tu elegiste {{ciudad}}</p>
+        </div>
+    </div>
+</div>

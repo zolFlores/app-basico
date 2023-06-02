@@ -1,0 +1,11 @@
+.selected{
+    background-color: blue;
+    color: beige;
+    padding: 10px;
+}
+
+.unSelected{
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
