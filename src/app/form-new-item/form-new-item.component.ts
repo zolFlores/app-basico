@@ -16,4 +16,9 @@ onAddNewItem (item:string):void{
   
 }
 
+counterRender():boolean{
+  console.log ("render form");
+  return true;
+}
+
 }

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 my-3">
+            <app-form-new-item [label]="'Ciudad'" [className]="' btn-primary'" (newItemEvent)="addCiudad($event)"></app-form-new-item>
+         </div>
+         
+         <div class="col-md-6 my-3">
+            <input type="text" class="form-control" placeholder="Filter..." [(ngModel)]="criterio">
+         </div>
+         <HR>
+         <div class="col-md 8">
+            <ul>
+        
+            <app-cities *ngFor="let city of (cities | filter :criterio) "   
+            (cityClickedEvent)="Onclicked($event)" [city]="city" [selection]="ciudad"></app-cities>
+           </ul>
+            
+           
+        </div>
+        <hr>
+      <div>  

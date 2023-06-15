@@ -5,7 +5,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   template:  ` <ul>
   <li
   [ngClass]="{'alert alert-primary':city===selection}" 
-  (click)="Onclicked(city)">{{city}}
+  (click)="Onclicked(city)">
+  {{city|uppercase}}
   </li>
 `
 })

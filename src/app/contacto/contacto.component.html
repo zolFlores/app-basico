@@ -1,0 +1,46 @@
+<h1> Formulario de Contacto </h1>
+<pre>{{contactForm. value| json}}</pre>
+<form (ngSubmit)="onSubmit(contactForm.value)" #contactForm="ngForm">
+  
+    <div class="mb-4">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" required #name="ngModel"> 
+        <div [hidden] = "name.valid || name.pristine" class="alert alert-danger">
+                el nombre es requerido
+        </div>
+    </div>
+    <div class="mb-4 form-check">
+        <label for="checkAdult" class="form-label">Eres mayor de 18 años?</label>
+        <input type="checkbox" class="form-check-input" id="checkAdult" name="checkAdult" [(ngModel)]="model.checkAdult">
+        <div class="invalid-feedback">
+            
+        </div>
+    </div>
+    <div class="mb-4">
+        <label for="departament" class="form-label">Departamento</label>
+        <select name="departament" id="" class="form-select form select-small" [(ngModel)]="model.departamment" required name="departamment" #departamment="ngModel" >
+            <option selected>Elige una opcion</option>
+            <option value="Marketig">Marketing</option>
+            <option value="Sales">Sales</option>
+            <option value="Other">Other</option>
+        </select>
+     <div [hidden] = "departamment.valid || departamment.pristine" class="invalid-feedback">    
+        El departamento es requerido
+    </div>
+    </div>
+    <div class="mb-4">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="text" class="form-control" id="age" name="age" [(ngModel)]="model.age" required>
+        <div class="invalid-feedback">           
+        </div>
+    </div>
+    <div class="mb-4">
+        <label for="name" class="form-label">Comentario</label>
+        <textarea class="form-control" placeholder ="Escribe tu comentario" name="comment" id="comment" cols="30" rows="10" [(ngModel)]="model.comment" required #comment="ngModel"></textarea>
+        <div [hidden]= "comment.valid || comment.pristine" class="alert alert-danger">    
+        </div>
+    </div>
+    <div class="d-grid gap-2 float-end col-4">
+        <button type="submit" class="btn btn-info btn-lg">Enviar</button>
+    </div>
+</form>
